@@ -1,20 +1,22 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <title>Untitled</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>  
     <body style="background-color : #e8ffe8";>
         <h3 style="color: black;">THIS PAGE IS STILL UNDERWORK FOR STYLING....!</h3>
         <nav class="navbar navbar-light navbar-expand-md" style="height: 102px;">
-            <div class="container-fluid"><a href="#"><img class="img-fluid" src="assets/img/Kalyani_logo.png" style="width: 80px;"></a></div>
+            <div class="container-fluid"><a href="#"><img class="img-fluid" src="{% static 'img/Kalyani_logo.png' %}" style="width: 80px;"></a></div>
         </nav>
         <div>
-            <p>If new to this place then Register <button>Register</button></p>
-            <p>You have an account then login <button>Login</button></p>
+            <p>If new to this place then Register <button><a href="{% url 'signup' %}">Register</a></button></p>
+            <p>You have an account then login <button><a href="{% url 'login' %}">Login</a></button></p>
         </div>
     </body>
 </html>   
