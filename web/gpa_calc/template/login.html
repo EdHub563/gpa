@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 
 <head>
@@ -16,7 +17,10 @@
         <div class="container-fluid"><a href="#"><img src="assets/img/Kalyani_logo.png" style="width: 80px;"></a></div>
     </nav>
     <div class="login-clean" style="background: rgba(241,247,252,0);opacity: 0.86;filter: brightness(100%);">
-        <form method="post" style="background: #cabbe9;box-shadow: 9px 11px 15px 2px;">
+        {% if error %}
+            <p class="text-center">{{error}}</p>
+        {% endif %}
+        <form method="post" style="background: #cabbe9;box-shadow: 9px 11px 15px 2px;" action="{% url 'login' %}">{% csrf_token  %}
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><img src="assets/img/user.png" style="width: 100px;"></div>
             <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
