@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xffffcef3),
       ),
       // home: HomePage(),
-      initialRoute: HomePage.id,
+      initialRoute: ResultsPage.id,
       routes: {
         ResultsPage.id: (context) => ResultsPage(),
         HomePage.id: (context) => HomePage(),
