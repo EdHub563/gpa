@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../widgets/avatar.dart';
 import '../widgets/semesterCard.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   static String id = 'homepage';
@@ -10,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
   final controller = ScrollController();
   Widget wi = BigAvatar();
   Animation<double> animation;
@@ -23,10 +26,10 @@ class _HomePageState extends State<HomePage> {
   @override
   void dispose() {
     controller.removeListener(onScroll);
+    super.dispose();
   }
 
   onScroll() {
-    print(controller.offset / controller.position.maxScrollExtent);
     setState(() {
       if (wi is BigAvatar) if (controller.offset /
               controller.position.maxScrollExtent >=
@@ -41,9 +44,21 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  final colors = [
+    Color(0xffcabbe9),
+    Color(0xffffcef3),
+    Color(0xffecfffb),
+    Color(0xffa1eafb),
+    Color(0xfffff4e3),
+    Color(0xffa6fff2),
+    Color(0xffa1eafb),
+    Color(0xffa1eafb),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Colors.white,
       body: CustomScrollView(controller: controller, slivers: [
         SliverAppBar(
@@ -87,7 +102,7 @@ class _HomePageState extends State<HomePage> {
           delegate: SliverChildListDelegate(
             [
               Container(
-                margin: EdgeInsets.only(top:5),
+                margin: EdgeInsets.only(top: 5),
                 child: Center(
                   child: Column(
                     children: [
@@ -99,24 +114,31 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.black87),
                       ),
                       SizedBox(height: 10),
-                      Text('CGPA : 8.73',style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Colors.black38)),
+                      Text('CGPA : 8.73',
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black38)),
                       SizedBox(height: 40)
                     ],
                   ),
                 ),
               ),
-              Column(
-                children: [
-                  SemesterTile(color: Color(0xffcabbe9),text: 'Semester 1', cgpa: 8.25,),
-                  SemesterTile(color: Color(0xffffcef3),text: 'Semester 2', cgpa: 8.33,),
-                  SemesterTile(color: Color(0xffecfffb),text: 'Semester 3', cgpa: 7.95,),
-                  SemesterTile(color: Color(0xffa1eafb),text: 'Semester 4', cgpa: 9.15,),
-                  SemesterTile(color: Color(0xfffff4e3),text: 'Semester 5', cgpa: 8.63,),
-                  SemesterTile(color: Color(0xffa6fff2),text: 'Semester 6', cgpa: 8.42,),
-                  SemesterTile(color: Color(0xffa1eafb),text: 'Semester 7', cgpa: 8.22,),
-                  SemesterTile(color: Color(0xffa1eafb),text: 'Semester 8', cgpa: 8.18,),
-                ],
-              ),
+              Wrap(
+                children: List<Widget>.generate(
+                    8,
+                    (index) => Provider<int>(
+                          create: (context) => index,
+                          child: Provider<GlobalKey<ScaffoldState>>(
+                            create: (context) => _scaffoldKey,
+                            child: SemesterTile(
+                              color: colors[index],
+                              text: 'Semester ${index + 1}',
+                              cgpa: '8.28',
+                            ),
+                          ),
+                        )),
+              )
             ],
           ),
         ),
@@ -124,4 +146,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

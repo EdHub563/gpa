@@ -31,16 +31,17 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        initialRoute: ResultsPage.id,
+        initialRoute: HomePage.id,
       routes: {
         ResultsPage.id: (context) => ResultsPage(),
         HomePage.id: (context) => HomePage(),
-        'auth' : (context) => AuthenticationWrapper();
+        'auth' : (context) => AuthenticationWrapper()
       },
       ),
     );
