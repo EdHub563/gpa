@@ -184,13 +184,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
-  pimp_my_button:
-    dependency: "direct main"
-    description:
-      name: pimp_my_button
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   pedantic:
     dependency: transitive
     description:
@@ -198,6 +191,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.2"
+  pimp_my_button:
+    dependency: "direct main"
+    description:
+      name: pimp_my_button
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   plugin_platform_interface:
     dependency: transitive
     description:

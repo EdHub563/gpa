@@ -171,30 +171,6 @@ class _GradeBarState extends State<GradeBar> {
     'f.gif'
   ];
 
-  Widget showSubmitButton() {
-    print('showing');
-    return SimpleDialog(
-      children: [
-        InkWell(
-          onTap: () {},
-          child: Container(
-              margin: EdgeInsets.only(bottom: 50),
-              height: 50,
-              width: 100,
-              color: Colors.green[400],
-              child: Center(
-                  child: Text(
-                'SUBMIT',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold),
-              ))),
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -239,7 +215,6 @@ class _GradeBarState extends State<GradeBar> {
                       // print('List index : ${Provider.of<int>(context, listen : false)}    :   grade = $index');
                       gradesList[Provider.of<int>(context, listen: false)] =
                           grades[index];
-                      print(gradesList);
                       var temp = _value;
                       if (_value != index) _value = selected ? index : null;
                       if (index == 0 && temp != index)
