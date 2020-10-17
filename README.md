@@ -1,5 +1,8 @@
 # gpa
-1.Aman Pratap Singh
+
+we are working on app which is going to calculate our SGPA and CGPA as per our performance and our information provided because sometime many studnts face many problems while calculating from grade to CGPA. 
+
+1.Aman Pratap Singh 
 2.Harsh Raj
 3.Pavan
 4.Gaurav

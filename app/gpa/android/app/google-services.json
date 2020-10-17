@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "640927714142",
+    "firebase_url": "https://gpa-calculator-bfaa8.firebaseio.com",
+    "project_id": "gpa-calculator-bfaa8",
+    "storage_bucket": "gpa-calculator-bfaa8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640927714142:android:7881ad65728243f7571dcf",
+        "android_client_info": {
+          "package_name": "com.example.gpa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640927714142-8t4t26n2jt629qmnu63o3pnak4k1huf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCalRwr4vP95G7d7ZoxdoGpfBuWJdKnsrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640927714142-8t4t26n2jt629qmnu63o3pnak4k1huf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
