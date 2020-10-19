@@ -7,10 +7,14 @@ import 'package:flutter/material.dart';
 import './ui/pages/home.dart';
 import './ui/pages/result.dart';
 import 'package:flutter/services.dart';
+import './ui/pages/networking.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  Networking obj = new Networking();
+  obj.retrieve();
+  print('hiiiii');
   runApp(MyApp());
 }
 
@@ -38,11 +42,11 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         initialRoute: HomePage.id,
-      routes: {
-        ResultsPage.id: (context) => ResultsPage(),
-        HomePage.id: (context) => HomePage(),
-        'auth' : (context) => AuthenticationWrapper()
-      },
+        routes: {
+          ResultsPage.id: (context) => ResultsPage(),
+          HomePage.id: (context) => HomePage(),
+          'auth': (context) => AuthenticationWrapper()
+        },
       ),
     );
   }
