@@ -14,7 +14,6 @@ void main() async {
   await Firebase.initializeApp();
   Networking obj = new Networking();
   obj.retrieve();
-  print('hiiiii');
   runApp(MyApp());
 }
 
