@@ -25,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
         Text(
           'Email',
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black38,
             fontSize: 16.0,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w500,
           ),
         ),
         SizedBox(
@@ -37,28 +37,28 @@ class _LoginPageState extends State<LoginPage> {
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(8.0),
               boxShadow: [
                 BoxShadow(
                     color: Colors.black26,
-                    blurRadius: 6.0,
+                    blurRadius: 7.0,
                     offset: Offset(0, 2))
               ]),
-          height: 60.0,
+          height: 50.0,
           child: TextField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.black38,
             ),
             decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14.0),
+                contentPadding: EdgeInsets.only(top: 13.0),
                 prefixIcon: Icon(
                   Icons.mail,
                   color: Color(0xff5ac18e),
                 ),
-                hintText: 'Email',
+                hintText: 'email',
                 hintStyle: TextStyle(
                   color: Colors.black38,
                 )),
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14.0),
+                contentPadding: EdgeInsets.only(top: 12.0),
                 prefixIcon: Icon(
                   Icons.lock,
                   color: Color(0xff5ac18e),
