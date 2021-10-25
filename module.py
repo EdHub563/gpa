@@ -9,19 +9,19 @@ class GPA_CALC:
         self.__cgpa= cur_cgpa
     
     def grade_to_score(self, val):
-        if val== 'EX':
+        if val == 'EX':
             return 10
-        elif val== 'A':
+        elif val == 'A':
             return 9
-        elif val== 'B':
+        elif val == 'B':
             return 8    
-        elif val== 'C':
+        elif val == 'C':
             return 7    
-        elif val== 'D':
+        elif val == 'D':
             return 6    
-        elif val== 'P':
+        elif val == 'P':
             return 5    
-        elif val== 'F':
+        elif val == 'F':
             return 0    
 
     def sgpa_calc(self):
