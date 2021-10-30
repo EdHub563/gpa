@@ -5,6 +5,5 @@ final kStatusBarIconBrightness = Brightness.dark;
 
 final kBackgroundImage = DecorationImage(
     image: Image.asset('assets/images/background.jpg').image,
-    colorFilter:
-    new ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
+    colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.dstATop),
     fit: BoxFit.cover);
